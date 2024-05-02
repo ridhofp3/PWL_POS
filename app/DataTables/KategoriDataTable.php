@@ -25,11 +25,7 @@ class KategoriDataTable extends DataTable
         ->addColumn('action', function (KategoriModel $kategori){
             return '
             <a href="'.route('kategori.edit', $kategori->kategori_id).'" class="btn btn-sm btn-warning">Edit</a>
-            <form action="' . route('kategori.delete') . '" method="post">
-                <input type="hidden" name="_method" value="DELETE">
-                <input type="hidden" name="id" value="' . $kategori->kategori_id . '">
-                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-            </form>';            
+            ';            
         })
         ->setRowId('kategori_id');
     }
