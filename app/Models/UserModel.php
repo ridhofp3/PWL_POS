@@ -10,6 +10,16 @@ use Monolog\Level;
 
 class UserModel extends Authenticatable
 {
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
+    
     use HasFactory;
     protected $table = 'm_user';
     public $timestamps = false;
